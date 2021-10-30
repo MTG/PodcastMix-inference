@@ -24,6 +24,16 @@ curl https://raw.githubusercontent.com/MTG/Podcastmix/main/UNet_model/unet_parts
 curl https://raw.githubusercontent.com/MTG/Podcastmix/main/ConvTasNet_model/conv_tasnet_norm.py -o ConvTasNet_model/conv_tasnet_norm.py
 ```
 
+Uncompress the pretrained models:
+
+```
+zip -F UNet_model/exp/tmp/best_model_splitted.zip --out UNet_model/exp/tmp/best_model.zip
+unzip UNet_model/exp/tmp/best_model.zip -d UNet_model/exp/tmp/
+zip -F ConvTasNet_model/exp/tmp/best_model_splitted.zip --out ConvTasNet_model/exp/tmp/best_model.zip
+unzip ConvTasNet_model/exp/tmp/best_model.zip -d ConvTasNet_model/exp/tmp/
+ 
+```
+
 ## Use the model to separate podcasts:
 
 ```

@@ -4,6 +4,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.8
+  - zip
   - Cython
   - pip:
     - -r file:requirements.txt

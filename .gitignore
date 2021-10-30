@@ -2,6 +2,12 @@ __pycache__/
 UNet_model/exp/tmp/podcasts/
 UNet_model/unet_model.py
 UNet_model/unet_parts.py
+UNet_model/exp/tmp/best_model.pth
+UNet_model/exp/best_model.pth
+UNet_model/exp/tmp/best_model.zip
 ConvTasNet_model/exp/tmp/podcasts/
 ConvTasNet_model/conv_tasnet_norm.py
+ConvTasNet_model/exp/tmp/best_model.pth
+ConvTasNet_model/exp/best_model.pth
+ConvTasNet_model/exp/tmp/best_model.zip
 py36.yml
