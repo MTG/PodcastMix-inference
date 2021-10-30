@@ -1,0 +1,32 @@
+convolution:
+  kernel_size: 5
+  stride: 2
+data:
+  fft_size: 2048
+  hop_size: 441
+  n_src: 2
+  original_sample_rate: 44100
+  sample_rate: 44100
+  segment: 2
+  train_dir: podcastmix/podcastmix-synth/metadata/train
+  valid_dir: podcastmix/podcastmix-synth/metadata/val
+  window_size: 2048
+main_args:
+  config_model: UNet_model/UNet_config.yml
+  exp_dir: exp/tmp
+  help: null
+  resume_from: UNet_model/exp/tmp/checkpoints/epoch=90-step=704976.ckpt
+model:
+  name: UNet
+optim:
+  lr: 0.0001
+  optimizer: adam
+  weight_decay: 0.0
+positional arguments: {}
+training:
+  batch_size: 1
+  early_stop: false
+  epochs: 100
+  half_lr: true
+  multi_speakers: true
+  num_workers: 12

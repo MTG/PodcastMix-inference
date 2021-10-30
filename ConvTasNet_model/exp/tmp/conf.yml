@@ -1,0 +1,38 @@
+data:
+  n_src: 2
+  original_sample_rate: 44100
+  sample_rate: 44100
+  segment: 2
+  train_dir: podcastmix/podcastmix-synth/metadata/train
+  valid_dir: podcastmix/podcastmix-synth/metadata/val
+filterbank:
+  kernel_size: 16
+  n_filters: 1024
+  stride: 4
+main_args:
+  config_model: ConvTasNet_model/ConvTasNet_config.yml
+  exp_dir: exp/tmp
+  help: null
+  resume_from: ConvTasNet_model/exp/tmp/checkpoints/epoch=51-step=402843.ckpt
+masknet:
+  bn_chan: 512
+  hid_chan: 512
+  mask_act: relu
+  n_blocks: 6
+  n_repeats: 3
+  n_src: 2
+  skip_chan: 512
+model:
+  name: ConvTasNet
+optim:
+  lr: 0.0001
+  optimizer: adam
+  weight_decay: 0.0
+positional arguments: {}
+training:
+  batch_size: 1
+  early_stop: true
+  epochs: 100
+  half_lr: true
+  multi_speakers: true
+  num_workers: 12
