@@ -1,6 +1,6 @@
 # Podcastmix: A dataset for separating music and speech in podcasts
 
-This repository contains the instructions for downloading and using the pre-trained UNet and ConvTasNet models in the context of the [ICASSP publication](TODO) Podcastmix: A dataset for separating music and speech in podcasts.
+This repository contains the instructions for downloading and using the pre-trained UNet and ConvTasNet models in the context of the ICASSP 2022 submission "Podcastmix: A dataset for separating music and speech in podcasts".
 If you want to download the complete dataset and train or evaluate your models, please refer to [this](https://github.com/MTG/Podcastmix) repository.
 
 ## Install
