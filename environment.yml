@@ -1,11 +1,10 @@
 name: Podcastmix
-channels:
-  - anaconda
-  - conda-forge
 dependencies:
-  - python=3.8
-  - zip
-  - Cython
-  - pip:
-    - -r file:requirements.txt
-    - -e .
+- python=3.8
+- pip
+- pip:
+  # works for regular pip packages
+  - docx
+  - pytorch-lightning==1.2.3
+  - torchaudio==0.8.1
+  - asteroid==0.5.1
