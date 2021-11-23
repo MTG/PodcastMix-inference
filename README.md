@@ -23,7 +23,7 @@ curl https://raw.githubusercontent.com/MTG/Podcastmix/main/UNet_model/unet_parts
 curl https://raw.githubusercontent.com/MTG/Podcastmix/main/ConvTasNet_model/conv_tasnet_norm.py -o ConvTasNet_model/conv_tasnet_norm.py
 ```
 
-Uncompress the pretrained models:
+Uncompress the pretrained models and  **overwrite previous file**:
 
 ```
 zip -F UNet_model/exp/tmp/best_model_splitted.zip --out UNet_model/exp/tmp/best_model.zip
@@ -42,20 +42,20 @@ unzip ConvTasNet_model/exp/tmp/best_model.zip -d ConvTasNet_model/exp/tmp/
 could be any of the following:
 
 - ConvTasNet
-- UNet
+- UNet (supports 2s and 18s segments)
 
 Without GPU
 ```
 python forward_podcast.py \
-    --test_dir=<directory-of-the-podcasts> --target_model=[MODEL] \
-    --exp_dir=<path to best_model.pth> --out_dir=<where-to-save-separations> \
+    --test_dir=<directory-of-the-podcastmix-real-no-reference-or-your-files> --target_model=[MODEL] \
+    --exp_dir=[MODEL]_model/exp/tmp --out_dir=separations \
     --segment=18 --sample_rate=44100 --use_gpu=0
 ```
 
 With GPU:
 ```
 CUDA_VISIBLE_DEVICES=0 python forward_podcast.py \
-    --test_dir=<directory-of-the-podcasts>  --target_model=[MODEL] \
-    --exp_dir=<path to best_model.pth> --out_dir=<where-to-save-separations> \
+    --test_dir=<directory-of-the-podcastmix-real-no-reference-or-your-files> --target_model=[MODEL] \
+    --exp_dir=[MODEL]_model/exp/tmp --out_dir=separations \
     --segment=18 --sample_rate=44100 --use_gpu=1
 ```
