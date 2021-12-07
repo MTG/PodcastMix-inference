@@ -59,3 +59,5 @@ CUDA_VISIBLE_DEVICES=0 python forward_podcast.py \
     --exp_dir=[MODEL]_model/exp/tmp --out_dir=separations \
     --segment=18 --sample_rate=44100 --use_gpu=1
 ```
+
+Note: the --out_dir folder will be created inside the --exp_dir folder.
