@@ -30,19 +30,9 @@ zip -F UNet_model/exp/tmp/best_model_splitted.zip --out UNet_model/exp/tmp/best_
 unzip UNet_model/exp/tmp/best_model.zip -d UNet_model/exp/tmp/
 zip -F ConvTasNet_model/exp/tmp/best_model_splitted.zip --out ConvTasNet_model/exp/tmp/best_model.zip
 unzip ConvTasNet_model/exp/tmp/best_model.zip -d ConvTasNet_model/exp/tmp/
- 
 ```
 
 ## Use the model to separate podcasts:
-
-```
-[MODEL]
-```
-
-could be any of the following:
-
-- ConvTasNet
-- UNet (supports 2s and 18s segments)
 
 Without GPU
 ```
@@ -59,3 +49,9 @@ CUDA_VISIBLE_DEVICES=0 python forward_podcast.py \
     --exp_dir=[MODEL]_model/exp/tmp --out_dir=separations \
     --segment=18 --sample_rate=44100 --use_gpu=1
 ```
+
+### Notes: ###
+- ```[MODEL]``` could be any of the following ```ConvTasNet``` or ```UNet```.
+- Considering the size of the convolutions, the UNet only supports 2 seconds and 18 seconds segments. ConvTasNet supports segments of any size.
+- You could modify the ```sample_rate``` to fit your needs, but the published pre-trained models were trained with a ```sample_rate``` of 44100Hz.
+- The ```--out_dir``` folder will be created inside the ```--exp_dir``` directory.
