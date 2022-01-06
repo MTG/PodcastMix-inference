@@ -51,7 +51,7 @@ CUDA_VISIBLE_DEVICES=0 python forward_podcast.py \
 ```
 
 ### Notes: ###
-- ```[MODEL]``` could be any of the following ```ConvTasNet``` or ```UNet```.
-- Considering the size of the convolutions, the UNet only supports 2 + 16*i seconds segments (2, 18, 34, 50, ...). ConvTasNet supports segments of any size.
+- ```[MODEL]``` could be ```ConvTasNet``` or ```UNet```.
+- Due to the size of the convolutions, the UNet only supports 2 + 16*i seconds segments (2, 18, 34, 50, ...). ConvTasNet supports segments of any size.
 - You could modify the ```sample_rate``` to fit your needs, but the published pre-trained models were trained with a ```sample_rate``` of 44100Hz.
 - The ```--out_dir``` folder will be created inside the ```--exp_dir``` directory.
